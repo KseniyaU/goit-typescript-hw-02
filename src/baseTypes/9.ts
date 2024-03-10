@@ -1,8 +1,20 @@
 /*
   Створіть новий тип даних, який підходить для цих двох об'єктів.
 */
+type Det = {
+  createAt: any,
+  updateAt: any,
+}
+type Page = {
+  title: string,
+  likes: number,
+  accounts: string[],
+  status: 'close' | 'open',
+  details?: Det,
+}
+type PageType = Page & {details?: Det};
 
-const page1 = {
+const page1: PageType = {
   title: 'The awesome page',
   likes: 100,
   accounts: ['Max', 'Anton', 'Nikita'],
@@ -13,7 +25,7 @@ const page1 = {
   }
 }
 
-const page2 = {
+const page2: PageType = {
   title: 'Python or Js',
   likes: 5,
   accounts: ['Alex'],
